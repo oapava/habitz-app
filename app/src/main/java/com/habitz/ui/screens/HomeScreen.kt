@@ -19,6 +19,7 @@ import com.habitz.ui.shared.PrimaryButton
 import com.habitz.ui.shared.PrimaryIcon
 import com.habitz.ui.theme.Accent
 import com.habitz.ui.theme.Background
+import com.habitz.ui.theme.GrayLight
 import com.habitz.ui.theme.Muted
 import com.habitz.ui.theme.Primary
 import com.habitz.ui.theme.TextPrimary
@@ -31,7 +32,7 @@ fun HomeScreen() {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(Background)
+            .background(GrayLight)
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {

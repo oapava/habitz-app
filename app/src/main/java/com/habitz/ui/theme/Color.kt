@@ -13,3 +13,5 @@ val Surface = Color(0xFFFFFFFF)    // tarjetas
 
 val TextPrimary = Color(0xFF1F2937) // texto principal
 val Muted = Color(0xFFA7B6C2)       // borde/placeholder
+
+val GrayLight = Color(0xFFD9D9D9)

@@ -1,28 +1,148 @@
 package com.habitz.ui.screens
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Switch
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.habitz.R
+import com.habitz.ui.shared.PrimaryIcon
+import com.habitz.ui.theme.Background
+import com.habitz.ui.theme.GrayLight
+import com.habitz.ui.theme.Primary
+import com.habitz.ui.theme.TextPrimary
 
+@Preview(showBackground = true)
 @Composable
 fun SettingsScreen() {
-    var darkMode by remember { mutableStateOf(false) }
-
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
+            .background(GrayLight)
             .padding(16.dp),
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text(text = "Ajustes")
-        Spacer(modifier = Modifier.height(8.dp))
-        Switch(
-            checked = darkMode,
-            onCheckedChange = { darkMode = it }
-        )
-        Text(text = if (darkMode) "Modo oscuro activado" else "Modo claro")
+        // Header con back y logo
+        item {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    PrimaryIcon(
+                        ico = painterResource(id = R.drawable.backarrow),
+                        onClick = {},
+                        modifier = Modifier
+                            .background(
+                                shape = CircleShape,
+                                color = Primary
+                            )
+                            .size(40.dp)
+                            .padding(5.dp)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_small),
+                        contentDescription = "Logo de Habitz",
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 50.dp)
+                            .padding(bottom = 5.dp)
+                    )
+                }
+            }
+        }
+
+        // Opciones configurables
+        item {
+            Card(
+                //shape = MaterialTheme.shapes.large,
+                //colors = CardDefaults.cardColors(containerColor = TextPrimary),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(5.dp)
+                ) {
+                    SettingOptionRow(
+                        text = "Vincular Calendario",
+                        onClick = { /* acción vincular calendario */ }
+                    )
+
+                    SettingOptionRow(
+                        text = "Reglas de agenda",
+                        onClick = { /* acción notificaciones */ }
+                    )
+
+                    SettingOptionRow(
+                        text = "Permisos",
+                        onClick = { /* acción sincronizar */ }
+                    )
+
+                    SettingOptionRow(
+                        text = "Configurar teléfono",
+                        onClick = { /* acción sincronizar */ }
+                    )
+                }
+            }
+        }
     }
 }
+
+/**
+ * Composable reutilizable para fila de opción en settings
+ */
+@Composable
+fun SettingOptionRow(
+    text: String,
+    onClick: () -> Unit
+) {
+    Card(
+        shape = MaterialTheme.shapes.extraLarge,
+        colors = CardDefaults.cardColors(containerColor = TextPrimary),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp, vertical = 12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = text,
+                color = Background,
+                fontWeight = FontWeight.Thin,
+                fontSize = 18.sp
+            )
+            PrimaryIcon(
+                ico = painterResource(id = R.drawable.next),
+                onClick = onClick,
+                modifier = Modifier
+                    .background(
+                        shape = CircleShape,
+                        color = Primary
+                    )
+                    .size(35.dp)
+                    .padding(5.dp)
+            )
+        }
+    }
+}
+
