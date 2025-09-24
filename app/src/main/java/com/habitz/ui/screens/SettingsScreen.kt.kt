@@ -151,7 +151,7 @@ fun SettingOptionRow(
                         shape = CircleShape,
                         color = Primary
                     )
-                    .size(35.dp)
+                    .size(25.dp)
                     .padding(5.dp)
             )
         }
