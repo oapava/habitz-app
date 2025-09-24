@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.*
 import com.habitz.ui.navigation.BottomNavigationBar
 import com.habitz.ui.navigation.BottomNavScreen
+import com.habitz.ui.screens.AgendaRulesScreen
 import com.habitz.ui.screens.HomeScreen
 import com.habitz.ui.screens.SettingsScreen
 import com.habitz.ui.theme.GrayLight
@@ -45,7 +46,14 @@ fun HabitzApp() {
                 .padding(innerPadding)
         ) {
             composable(BottomNavScreen.Home.route) { HomeScreen() }
-            composable(BottomNavScreen.Settings.route) { SettingsScreen() }
+            composable(BottomNavScreen.Settings.route) { SettingsScreen(navController) }
+            // 👇 pantalla interna de Settings
+            composable("agendaRules") { AgendaRulesScreen(navController) }
+
+            // 👇 placeholders para que no rompa la navegación
+            composable(BottomNavScreen.Profile.route) { Text("Pantalla Perfil") }
+            composable(BottomNavScreen.Following.route) { Text("Pantalla Seguimiento") }
+            composable(BottomNavScreen.Suggest.route) { Text("Pantalla Sugerencias") }
         }
     }
 }

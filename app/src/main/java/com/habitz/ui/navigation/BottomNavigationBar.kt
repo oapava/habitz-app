@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.habitz.ui.theme.Accent
 import com.habitz.ui.theme.Background
 import com.habitz.ui.theme.GrayLight
 import com.habitz.ui.theme.Secondary
@@ -48,6 +47,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                             indication = null,
                             interactionSource = remember { MutableInteractionSource() }
                         ) {
+                            // ✅ Esta lógica solo aplica aquí (bottom nav items)
                             navController.navigate(screen.route) {
                                 popUpTo(navController.graph.startDestinationId) { saveState = true }
                                 launchSingleTop = true
@@ -67,4 +67,3 @@ fun BottomNavigationBar(navController: NavHostController) {
         }
     }
 }
-

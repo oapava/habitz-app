@@ -26,7 +26,7 @@ import com.habitz.ui.theme.Primary
 import com.habitz.ui.theme.TextPrimary
 
 @Composable
-fun SettingsScreen(navController: NavHostController) {
+fun AgendaRulesScreen(navController: NavHostController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +49,7 @@ fun SettingsScreen(navController: NavHostController) {
                 ) {
                     PrimaryIcon(
                         ico = painterResource(id = R.drawable.backarrow),
-                        onClick = { navController.popBackStack() },
+                        onClick = {navController.popBackStack() },
                         modifier = Modifier
                             .background(
                                 shape = CircleShape,
@@ -73,41 +73,27 @@ fun SettingsScreen(navController: NavHostController) {
         item {
             Card(
                 colors = CardDefaults.cardColors(containerColor = Color.Transparent),
-                modifier = Modifier.fillMaxWidth()
+                //shape = MaterialTheme.shapes.large,
+                //colors = CardDefaults.cardColors(containerColor = TextPrimary),
+                modifier = Modifier
+                    .fillMaxWidth()
             ) {
                 Text(
-                    text = "Configuración",
+                    text = "Reglas de Agenda",
                     color = TextPrimary,
                     fontWeight = FontWeight.Bold,
                     fontSize = 30.sp,
-                    modifier = Modifier.padding(vertical = 20.dp)
+                    modifier = Modifier
+                        .padding(vertical = 20.dp)
                 )
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    SettingOptionRow(
+
+                    AgendaRulesOptionRow(
                         text = "Vincular Calendario",
                         onClick = { /* acción vincular calendario */ }
-                    )
-
-                    SettingOptionRow(
-                        text = "Reglas de agenda",
-                        onClick = {
-                            navController.navigate("agendaRules") {
-                                launchSingleTop = true
-                            }
-                        }
-                    )
-
-                    SettingOptionRow(
-                        text = "Permisos",
-                        onClick = { /* acción permisos */ }
-                    )
-
-                    SettingOptionRow(
-                        text = "Configurar teléfono",
-                        onClick = { /* acción configurar teléfono */ }
                     )
                 }
             }
@@ -115,13 +101,11 @@ fun SettingsScreen(navController: NavHostController) {
     }
 }
 
-
-
 /**
  * Composable reutilizable para fila de opción en settings
  */
 @Composable
-fun SettingOptionRow(
+fun AgendaRulesOptionRow(
     text: String,
     onClick: () -> Unit
 ) {
