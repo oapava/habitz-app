@@ -103,7 +103,8 @@ fun HeaderRow(title: String) {
             text = title,
             style = MaterialTheme.typography.titleLarge.copy(
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                color = Background
             )
         )
         PrimaryIcon(
