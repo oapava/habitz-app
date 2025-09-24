@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -12,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -72,14 +74,25 @@ fun SettingsScreen() {
         // Opciones configurables
         item {
             Card(
+                colors = CardDefaults.cardColors(containerColor = Color.Transparent),
                 //shape = MaterialTheme.shapes.large,
                 //colors = CardDefaults.cardColors(containerColor = TextPrimary),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
             ) {
+                Text(
+                    text = "Configuración",
+                    color = TextPrimary,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp,
+                    modifier = Modifier
+                        .padding(vertical = 20.dp)
+                )
                 Column(
                     modifier = Modifier.fillMaxWidth(),
-                    verticalArrangement = Arrangement.spacedBy(5.dp)
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
+
                     SettingOptionRow(
                         text = "Vincular Calendario",
                         onClick = { /* acción vincular calendario */ }
@@ -114,14 +127,14 @@ fun SettingOptionRow(
     onClick: () -> Unit
 ) {
     Card(
-        shape = MaterialTheme.shapes.extraLarge,
+        shape = RoundedCornerShape(23.dp),
         colors = CardDefaults.cardColors(containerColor = TextPrimary),
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 10.dp, vertical = 12.dp),
+                .padding(horizontal = 15.dp, vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {

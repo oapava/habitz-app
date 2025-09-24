@@ -4,15 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.*
 import com.habitz.ui.navigation.BottomNavigationBar
 import com.habitz.ui.navigation.BottomNavScreen
 import com.habitz.ui.screens.HomeScreen
 import com.habitz.ui.screens.SettingsScreen
+import com.habitz.ui.theme.GrayLight
 import com.habitz.ui.theme.HabitzTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,12 +35,14 @@ fun HabitzApp() {
     val navController = rememberNavController()
 
     Scaffold(
-        bottomBar = { BottomNavigationBar(navController) }
+        bottomBar = { BottomNavigationBar(navController) },
+        containerColor = GrayLight
     ) { innerPadding ->
         NavHost(
             navController = navController,
             startDestination = BottomNavScreen.Home.route,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier
+                .padding(innerPadding)
         ) {
             composable(BottomNavScreen.Home.route) { HomeScreen() }
             composable(BottomNavScreen.Settings.route) { SettingsScreen() }

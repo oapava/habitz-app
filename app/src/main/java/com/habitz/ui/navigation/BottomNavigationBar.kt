@@ -16,59 +16,55 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.habitz.ui.theme.Accent
 import com.habitz.ui.theme.Background
+import com.habitz.ui.theme.GrayLight
 import com.habitz.ui.theme.Secondary
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
     NavigationBar(
-        containerColor = Background, // Fondo del bottom bar
+        containerColor = GrayLight,
         tonalElevation = 0.dp,
-        modifier = Modifier
-            .padding(horizontal = 15.dp)
+        modifier = Modifier.padding(horizontal = 15.dp)
     ) {
         val currentDestination = navController.currentBackStackEntry?.destination?.route
 
         bottomNavItems.forEach { screen ->
-            NavigationBarItem(
-                selected = currentDestination == screen.route,
-                // 👇 onClick vacío, porque manejamos el click en el Box
-                onClick = { },
-                icon = {
-                    Box(
-                        modifier = Modifier
-                            .size(60.dp) // tamaño del círculo
-                            .background(
-                                Secondary,
-                                shape = CircleShape
-                            )
-                            .clickable( // 👈 click sin ripple
-                                indication = null,
-                                interactionSource = remember { MutableInteractionSource() }
-                            ) {
-                                navController.navigate(screen.route) {
-                                    popUpTo(navController.graph.startDestinationId) { saveState = true }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            },
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            painter = painterResource(id = screen.icon),
-                            contentDescription = screen.title,
-                            tint = Background,
-                            modifier = Modifier.size(28.dp)
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(vertical = 8.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(60.dp)
+                        .background(
+                            color = if (currentDestination == screen.route) Secondary else Secondary,
+                            shape = CircleShape
                         )
-                    }
-                },
-                alwaysShowLabel = false,
-                colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Background,
-                    unselectedIconColor = Background,
-                    indicatorColor = Color.Transparent // 👈 quitamos el óvalo por completo
-                )
-            )
+                        .clickable(
+                            indication = null,
+                            interactionSource = remember { MutableInteractionSource() }
+                        ) {
+                            navController.navigate(screen.route) {
+                                popUpTo(navController.graph.startDestinationId) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        painter = painterResource(id = screen.icon),
+                        contentDescription = screen.title,
+                        tint = Background,
+                        modifier = Modifier.size(28.dp)
+                    )
+                }
+            }
         }
     }
 }
+
