@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Habitz</string>
+    <string name="permissions">Permisos</string>
+    <string name="phone_config">Configurar teléfono</string>
+    <string name="otp_title">Código SMS</string>
+    <string name="verification_success">Verificación exitosa</string>
+
 </resources>

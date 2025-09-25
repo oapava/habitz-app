@@ -1,0 +1,865 @@
+kotlin version: 2.0.21
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: /Users/omarpava/AndroidStudioProjects/Habitz/app/src/main/java/com/habitz/ui/screens/SettingsScreen.kt.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:27)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:14)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:246)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:142)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:148)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:49)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:464)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:73)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:675)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1660)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN CLASS_STATIC_INITIALIZER name:<clinit> visibility:public/*package*/ modality:FINAL <> () returnType:kotlin.Unit
+  BLOCK_BODY
+    SET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=kotlin.Unit origin=INITIALIZE_FIELD
+      value: CONSTRUCTOR_CALL 'public constructor <init> () [primary] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt origin=null
+    SET_FIELD 'FIELD name:lambda-1 type:@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.lazy.LazyItemScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> visibility:internal [static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=kotlin.Unit origin=INITIALIZE_FIELD
+      value: CALL 'public final fun composableLambdaInstance (key: kotlin.Int, tracked: kotlin.Boolean, block: kotlin.Any): androidx.compose.runtime.internal.ComposableLambda declared in androidx.compose.runtime.internal.ComposableLambdaKt' type=androidx.compose.runtime.internal.ComposableLambda origin=null
+        key: CONST Int type=kotlin.Int value=26538775
+        tracked: CONST Boolean type=kotlin.Boolean value=false
+        block: BLOCK type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+          CLASS LAMBDA_IMPL CLASS name:<no name provided> modality:FINAL visibility:public/*package*/ superTypes:[kotlin.Any; kotlin.Function3<androidx.compose.foundation.lazy.LazyItemScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>]
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+            CONSTRUCTOR GENERATED_MEMBER_IN_CALLABLE_REFERENCE visibility:public/*package*/ <> () returnType:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> [primary]
+              BLOCK_BODY
+                DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () [primary] declared in kotlin.Any'
+                BLOCK type=kotlin.Unit origin=null
+            FUN name:invoke visibility:public modality:FINAL <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, $this$item:androidx.compose.foundation.lazy.LazyItemScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              overridden:
+                public abstract fun invoke (p1: P1 of kotlin.Function3, p2: P2 of kotlin.Function3, p3: P3 of kotlin.Function3): R of kotlin.Function3 [operator] declared in kotlin.Function3
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER name:$this$item index:0 type:androidx.compose.foundation.lazy.LazyItemScope
+              VALUE_PARAMETER name:$composer index:1 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:2 type:kotlin.Int
+              BLOCK_BODY
+                CALL 'public final fun sourceInformation (composer: androidx.compose.runtime.Composer, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                  sourceInformation: CONST String type=kotlin.String value="C47@1631L1292:SettingsScreen.kt.kt#wd1imw"
+                WHEN type=kotlin.Unit origin=IF
+                  BRANCH
+                    if: CALL 'public final fun OROR (arg0: kotlin.Boolean, arg1: kotlin.Boolean): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                      arg0: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                          arg0: CALL 'public final fun and (other: kotlin.Int): kotlin.Int [infix] declared in kotlin.Int' type=kotlin.Int origin=null
+                            $this: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            other: CONST Int type=kotlin.Int value=17
+                          arg1: CONST Int type=kotlin.Int value=16
+                      arg1: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public abstract fun <get-skipping> (): kotlin.Boolean declared in androidx.compose.runtime.Composer' type=kotlin.Boolean origin=null
+                          $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                    then: BLOCK type=kotlin.Unit origin=null
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventStart (key: kotlin.Int, dirty1: kotlin.Int, dirty2: kotlin.Int, info: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                            key: CONST Int type=kotlin.Int value=26538775
+                            dirty1: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            dirty2: CONST Int type=kotlin.Int value=-1
+                            info: CONST String type=kotlin.String value="com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.lambda-1.<anonymous> (SettingsScreen.kt.kt:47)"
+                      CALL 'public final fun Column (modifier: androidx.compose.ui.Modifier?, verticalArrangement: androidx.compose.foundation.layout.Arrangement.Vertical?, horizontalAlignment: androidx.compose.ui.Alignment.Horizontal?, content: @[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit [inline] declared in androidx.compose.foundation.layout.ColumnKt' type=kotlin.Unit origin=null
+                        modifier: CALL 'public final fun fillMaxWidth$default (fraction: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+                          $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                          fraction: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                            CONST Float type=kotlin.Float value=0.0
+                          $mask0: CONST Int type=kotlin.Int value=1
+                          $handler: CONST Null type=kotlin.Any? value=null
+                        verticalArrangement: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        horizontalAlignment: CALL 'public final fun <get-CenterHorizontally> (): androidx.compose.ui.Alignment.Horizontal declared in androidx.compose.ui.Alignment.Companion' type=androidx.compose.ui.Alignment.Horizontal origin=GET_PROPERTY
+                          $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Alignment.Companion visibility:public [final,static] declared in androidx.compose.ui.Alignment' type=androidx.compose.ui.Alignment.Companion origin=null
+                        content: BLOCK type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=LAMBDA
+                          COMPOSITE type=kotlin.Unit origin=null
+                          FUNCTION_REFERENCE 'private final fun invoke$lambda$3 ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                        $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                        $changed: CONST Int type=kotlin.Int value=390
+                        $default: CONST Int type=kotlin.Int value=2
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventEnd (): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  BRANCH
+                    if: CONST Boolean type=kotlin.Boolean value=true
+                    then: CALL 'public abstract fun skipToGroupEnd (): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                      $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+            FUN LOCAL_FUNCTION_FOR_LAMBDA name:invoke$lambda$3$lambda$2$lambda$1$lambda$0 visibility:private modality:FINAL <> () returnType:kotlin.Unit?
+              BLOCK_BODY
+                RETURN type=kotlin.Nothing from='private final fun invoke$lambda$3$lambda$2$lambda$1$lambda$0 (): kotlin.Unit? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:kotlin.Unit visibility:public [final,static] declared in kotlin.Unit' type=kotlin.Unit origin=null
+            FUN INLINE_LAMBDA name:invoke$lambda$3$lambda$2$lambda$1 visibility:private modality:FINAL <> () returnType:kotlin.Function0<kotlin.Unit>
+              BLOCK_BODY
+                VAR name:$i$a$-cache-ComposableSingletons$SettingsScreen_ktKt$lambda-1$1$1$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                RETURN type=kotlin.Nothing from='private final fun invoke$lambda$3$lambda$2$lambda$1 (): kotlin.Function0<kotlin.Unit> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  BLOCK type=kotlin.Function0<kotlin.Unit> origin=LAMBDA
+                    COMPOSITE type=kotlin.Unit origin=null
+                    CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=kotlin.Function0<kotlin.Unit> origin=null
+                      <T>: kotlin.Function0<kotlin.Unit>
+                      dynamicCall: CALL 'public final fun invoke (): kotlin.Function0<kotlin.Unit> declared in kotlin.jvm.internal.invokeDynamic' type=kotlin.Function0<kotlin.Unit> origin=null
+                      bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                        tag: CONST Int type=kotlin.Int value=6
+                        owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+                        name: CONST String type=kotlin.String value="metafactory"
+                        descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+                        isInterface: CONST Boolean type=kotlin.Boolean value=false
+                      bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+                        CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                          method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (): R of kotlin.Function0 [operator] declared in kotlin.Function0' type=kotlin.Any
+                        RAW_FUNCTION_REFERENCE 'private final fun invoke$lambda$3$lambda$2$lambda$1$lambda$0 (): kotlin.Unit? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Any
+                        CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                          method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (): kotlin.Unit? [fake_override,operator] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+            FUN INLINE_LAMBDA name:invoke$lambda$3$lambda$2 visibility:private modality:FINAL <> ($receiver:androidx.compose.foundation.layout.RowScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              $receiver: VALUE_PARAMETER name:$this$Row type:androidx.compose.foundation.layout.RowScope
+              VALUE_PARAMETER name:$composer index:0 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:1 type:kotlin.Int
+              BLOCK_BODY
+                VAR name:$i$a$-Row-ComposableSingletons$SettingsScreen_ktKt$lambda-1$1$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                BLOCK type=kotlin.Unit origin=null
+                  CALL 'public final fun sourceInformationMarkerStart (composer: androidx.compose.runtime.Composer, key: kotlin.Int, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                    key: CONST Int type=kotlin.Int value=-165497017
+                    sourceInformation: CONST String type=kotlin.String value="C59@2135L42,60@2213L2,58@2092L446,70@2600L43,69@2559L332:SettingsScreen.kt.kt#wd1imw"
+                  COMPOSITE type=kotlin.Unit origin=null
+                    BLOCK type=kotlin.Unit origin=ARGUMENTS_REORDERING_FOR_CALL
+                      VAR IR_TEMPORARY_VARIABLE name:tmp3_ico type:androidx.compose.ui.graphics.painter.Painter [val]
+                        CALL 'public final fun painterResource (id: kotlin.Int, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.ui.graphics.painter.Painter declared in androidx.compose.ui.res.PainterResources_androidKt' type=androidx.compose.ui.graphics.painter.Painter origin=null
+                          id: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:backarrow type:kotlin.Int visibility:public [static] declared in com.example.habitz.R.drawable' type=kotlin.Int superQualifierSymbol=com.example.habitz.R.drawable origin=null
+                          $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                          $changed: CONST Int type=kotlin.Int value=0
+                      VAR IR_TEMPORARY_VARIABLE name:tmp4_modifier type:androidx.compose.ui.Modifier [val]
+                        CALL 'public final fun padding-3ABfNKs (all: androidx.compose.ui.unit.Dp): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=null
+                          $receiver: CALL 'public final fun size-3ABfNKs (size: androidx.compose.ui.unit.Dp): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=null
+                            $receiver: BLOCK type=androidx.compose.ui.Modifier origin=ARGUMENTS_REORDERING_FOR_CALL
+                              VAR IR_TEMPORARY_VARIABLE name:tmp0_$receiver type:androidx.compose.ui.Modifier.Companion [val]
+                                GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                              VAR IR_TEMPORARY_VARIABLE name:tmp1_shape type:androidx.compose.foundation.shape.RoundedCornerShape [val]
+                                CALL 'public final fun <get-CircleShape> (): androidx.compose.foundation.shape.RoundedCornerShape declared in androidx.compose.foundation.shape.RoundedCornerShapeKt' type=androidx.compose.foundation.shape.RoundedCornerShape origin=GET_PROPERTY
+                              VAR IR_TEMPORARY_VARIABLE name:tmp2_color type:androidx.compose.ui.graphics.Color [val]
+                                CALL 'public final fun <get-Primary> (): androidx.compose.ui.graphics.Color declared in com.habitz.ui.theme.ColorKt' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                              CALL 'public final fun background-bw27NRU (color: androidx.compose.ui.graphics.Color, shape: androidx.compose.ui.graphics.Shape): androidx.compose.ui.Modifier declared in androidx.compose.foundation.BackgroundKt' type=androidx.compose.ui.Modifier origin=null
+                                $receiver: GET_VAR 'val tmp0_$receiver: androidx.compose.ui.Modifier.Companion [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.ui.Modifier.Companion origin=null
+                                color: GET_VAR 'val tmp2_color: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                                shape: GET_VAR 'val tmp1_shape: androidx.compose.foundation.shape.RoundedCornerShape [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.foundation.shape.RoundedCornerShape origin=null
+                            size: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                              $receiver: CONST Int type=kotlin.Int value=40
+                          all: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                            $receiver: CONST Int type=kotlin.Int value=5
+                      CALL 'public final fun PrimaryIcon-Sj8uqqQ (onClick: kotlin.Function0<kotlin.Unit>, ico: androidx.compose.ui.graphics.painter.Painter?, label: kotlin.String?, labelColor: androidx.compose.ui.graphics.Color?, modifier: androidx.compose.ui.Modifier?, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit declared in com.habitz.ui.shared.PrimaryIconKt' type=kotlin.Unit origin=null
+                        onClick: BLOCK type=kotlin.Function0<kotlin.Unit> origin=null
+                          BLOCK type=kotlin.Unit origin=null
+                            CALL 'public abstract fun startReplaceGroup (key: kotlin.Int): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                              $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                              key: CONST Int type=kotlin.Int value=1657232447
+                            CALL 'public final fun sourceInformation (composer: androidx.compose.runtime.Composer, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                              composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                              sourceInformation: CONST String type=kotlin.String value="CC(remember):SettingsScreen.kt.kt#9igjgp"
+                          VAR IR_TEMPORARY_VARIABLE name:tmp0_group type:kotlin.Function0<kotlin.Unit> [val]
+                            CALL 'public final fun cache <T> (invalid: kotlin.Boolean, block: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposerKt.cache>): T of androidx.compose.runtime.ComposerKt.cache [inline] declared in androidx.compose.runtime.ComposerKt' type=kotlin.Function0<kotlin.Unit> origin=null
+                              <T>: kotlin.Function0<kotlin.Unit>
+                              $receiver: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                              invalid: CONST Boolean type=kotlin.Boolean value=false
+                              block: BLOCK type=kotlin.Function0<kotlin.Function0<kotlin.Unit>> origin=LAMBDA
+                                COMPOSITE type=kotlin.Unit origin=null
+                                FUNCTION_REFERENCE 'private final fun invoke$lambda$3$lambda$2$lambda$1 (): kotlin.Function0<kotlin.Unit> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Function0<kotlin.Function0<kotlin.Unit>> origin=INLINE_LAMBDA reflectionTarget=null
+                          CALL 'public abstract fun endReplaceGroup (): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                            $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                          GET_VAR 'val tmp0_group: kotlin.Function0<kotlin.Unit> [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=kotlin.Function0<kotlin.Unit> origin=null
+                        ico: GET_VAR 'val tmp3_ico: androidx.compose.ui.graphics.painter.Painter [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.ui.graphics.painter.Painter origin=null
+                        label: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        labelColor: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        modifier: GET_VAR 'val tmp4_modifier: androidx.compose.ui.Modifier [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.ui.Modifier origin=null
+                        $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                        $changed: CONST Int type=kotlin.Int value=6
+                        $default: CONST Int type=kotlin.Int value=12
+                    CALL 'public final fun Image (painter: androidx.compose.ui.graphics.painter.Painter, contentDescription: kotlin.String?, modifier: androidx.compose.ui.Modifier?, alignment: androidx.compose.ui.Alignment?, contentScale: androidx.compose.ui.layout.ContentScale?, alpha: kotlin.Float, colorFilter: androidx.compose.ui.graphics.ColorFilter?, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit declared in androidx.compose.foundation.ImageKt' type=kotlin.Unit origin=null
+                      painter: CALL 'public final fun painterResource (id: kotlin.Int, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.ui.graphics.painter.Painter declared in androidx.compose.ui.res.PainterResources_androidKt' type=androidx.compose.ui.graphics.painter.Painter origin=null
+                        id: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:logo_small type:kotlin.Int visibility:public [static] declared in com.example.habitz.R.drawable' type=kotlin.Int superQualifierSymbol=com.example.habitz.R.drawable origin=null
+                        $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                        $changed: CONST Int type=kotlin.Int value=0
+                      contentDescription: CONST String type=kotlin.String value="Logo de Habitz"
+                      modifier: CALL 'public final fun padding-qDBjuR0$default (start: androidx.compose.ui.unit.Dp, top: androidx.compose.ui.unit.Dp, end: androidx.compose.ui.unit.Dp, bottom: androidx.compose.ui.unit.Dp, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+                        $receiver: CALL 'public final fun size-VpY3zN4 (width: androidx.compose.ui.unit.Dp, height: androidx.compose.ui.unit.Dp): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=null
+                          $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                          width: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                            $receiver: CONST Int type=kotlin.Int value=100
+                          height: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                            $receiver: CONST Int type=kotlin.Int value=50
+                        start: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+                            <T>: kotlin.Float
+                            <R>: androidx.compose.ui.unit.Dp
+                            v: CONST Float type=kotlin.Float value=0.0
+                        top: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+                            <T>: kotlin.Float
+                            <R>: androidx.compose.ui.unit.Dp
+                            v: CONST Float type=kotlin.Float value=0.0
+                        end: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+                            <T>: kotlin.Float
+                            <R>: androidx.compose.ui.unit.Dp
+                            v: CONST Float type=kotlin.Float value=0.0
+                        bottom: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                          $receiver: CONST Int type=kotlin.Int value=5
+                        $mask0: CONST Int type=kotlin.Int value=7
+                        $handler: CONST Null type=kotlin.Any? value=null
+                      alignment: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      contentScale: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      alpha: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                        CONST Float type=kotlin.Float value=0.0
+                      colorFilter: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                      $changed: CONST Int type=kotlin.Int value=432
+                      $default: CONST Int type=kotlin.Int value=120
+                  CALL 'public final fun sourceInformationMarkerEnd (composer: androidx.compose.runtime.Composer): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+            FUN INLINE_LAMBDA name:invoke$lambda$3 visibility:private modality:FINAL <> ($receiver:androidx.compose.foundation.layout.ColumnScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              $receiver: VALUE_PARAMETER name:$this$Column type:androidx.compose.foundation.layout.ColumnScope
+              VALUE_PARAMETER name:$composer index:0 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:1 type:kotlin.Int
+              BLOCK_BODY
+                VAR name:$i$a$-Column-ComposableSingletons$SettingsScreen_ktKt$lambda-1$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                BLOCK type=kotlin.Unit origin=null
+                  CALL 'public final fun sourceInformationMarkerStart (composer: androidx.compose.runtime.Composer, key: kotlin.Int, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3' type=androidx.compose.runtime.Composer? origin=null
+                    key: CONST Int type=kotlin.Int value=23720166
+                    sourceInformation: CONST String type=kotlin.String value="C51@1790L1119:SettingsScreen.kt.kt#wd1imw"
+                  COMPOSITE type=kotlin.Unit origin=null
+                    CALL 'public final fun Row (modifier: androidx.compose.ui.Modifier?, horizontalArrangement: androidx.compose.foundation.layout.Arrangement.Horizontal?, verticalAlignment: androidx.compose.ui.Alignment.Vertical?, content: @[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.RowScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit [inline] declared in androidx.compose.foundation.layout.RowKt' type=kotlin.Unit origin=null
+                      modifier: CALL 'public final fun padding-3ABfNKs (all: androidx.compose.ui.unit.Dp): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=null
+                        $receiver: CALL 'public final fun fillMaxWidth$default (fraction: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+                          $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                          fraction: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                            CONST Float type=kotlin.Float value=0.0
+                          $mask0: CONST Int type=kotlin.Int value=1
+                          $handler: CONST Null type=kotlin.Any? value=null
+                        all: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                          $receiver: CONST Int type=kotlin.Int value=10
+                      horizontalArrangement: CALL 'public final fun <get-SpaceBetween> (): androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical declared in androidx.compose.foundation.layout.Arrangement' type=androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical origin=GET_PROPERTY
+                        $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.foundation.layout.Arrangement visibility:public [final,static] declared in androidx.compose.foundation.layout.Arrangement' type=androidx.compose.foundation.layout.Arrangement origin=null
+                      verticalAlignment: CALL 'public final fun <get-CenterVertically> (): androidx.compose.ui.Alignment.Vertical declared in androidx.compose.ui.Alignment.Companion' type=androidx.compose.ui.Alignment.Vertical origin=GET_PROPERTY
+                        $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Alignment.Companion visibility:public [final,static] declared in androidx.compose.ui.Alignment' type=androidx.compose.ui.Alignment.Companion origin=null
+                      content: BLOCK type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.RowScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=LAMBDA
+                        COMPOSITE type=kotlin.Unit origin=null
+                        FUNCTION_REFERENCE 'private final fun invoke$lambda$3$lambda$2 ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.RowScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                      $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3' type=androidx.compose.runtime.Composer? origin=null
+                      $changed: CONST Int type=kotlin.Int value=438
+                      $default: CONST Int type=kotlin.Int value=0
+                  CALL 'public final fun sourceInformationMarkerEnd (composer: androidx.compose.runtime.Composer): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$3' type=androidx.compose.runtime.Composer? origin=null
+            FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static]
+            FUN CLASS_STATIC_INITIALIZER name:<clinit> visibility:public/*package*/ modality:FINAL <> () returnType:kotlin.Unit
+              BLOCK_BODY
+                SET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=INITIALIZE_FIELD
+                  value: CONSTRUCTOR_CALL 'public/*package*/ constructor <init> () [primary] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+            FUN BRIDGE name:invoke visibility:public modality:OPEN <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, p1:kotlin.Any?, p2:kotlin.Any?, p3:kotlin.Any?) returnType:kotlin.Any?
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER BRIDGE name:p1 index:0 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p2 index:1 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p3 index:2 type:kotlin.Any?
+              EXPRESSION_BODY
+                RETURN type=kotlin.Nothing from='public open fun invoke (p1: kotlin.Any?, p2: kotlin.Any?, p3: kotlin.Any?): kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  CALL 'public final fun invoke ($this$item: androidx.compose.foundation.lazy.LazyItemScope, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=BRIDGE_DELEGATION
+                    $this: GET_VAR '<this>: com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+                    $this$item: TYPE_OP type=androidx.compose.foundation.lazy.LazyItemScope origin=IMPLICIT_CAST typeOperand=androidx.compose.foundation.lazy.LazyItemScope
+                      GET_VAR 'p1: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $composer: TYPE_OP type=androidx.compose.runtime.Composer origin=IMPLICIT_CAST typeOperand=androidx.compose.runtime.Composer
+                      GET_VAR 'p2: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $changed: TYPE_OP type=kotlin.Int origin=IMPLICIT_CAST typeOperand=kotlin.Int
+                      GET_VAR 'p3: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+          GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+    SET_FIELD 'FIELD name:lambda-2 type:@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> visibility:internal [static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=kotlin.Unit origin=INITIALIZE_FIELD
+      value: CALL 'public final fun composableLambdaInstance (key: kotlin.Int, tracked: kotlin.Boolean, block: kotlin.Any): androidx.compose.runtime.internal.ComposableLambda declared in androidx.compose.runtime.internal.ComposableLambdaKt' type=androidx.compose.runtime.internal.ComposableLambda origin=null
+        key: CONST Int type=kotlin.Int value=509707086
+        tracked: CONST Boolean type=kotlin.Boolean value=false
+        block: BLOCK type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+          CLASS LAMBDA_IMPL CLASS name:<no name provided> modality:FINAL visibility:public/*package*/ superTypes:[kotlin.Any; kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>]
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+            CONSTRUCTOR GENERATED_MEMBER_IN_CALLABLE_REFERENCE visibility:public/*package*/ <> () returnType:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> [primary]
+              BLOCK_BODY
+                DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () [primary] declared in kotlin.Any'
+                BLOCK type=kotlin.Unit origin=null
+            FUN name:invoke visibility:public modality:FINAL <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, $this$Card:androidx.compose.foundation.layout.ColumnScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              overridden:
+                public abstract fun invoke (p1: P1 of kotlin.Function3, p2: P2 of kotlin.Function3, p3: P3 of kotlin.Function3): R of kotlin.Function3 [operator] declared in kotlin.Function3
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER name:$this$Card index:0 type:androidx.compose.foundation.layout.ColumnScope
+              VALUE_PARAMETER name:$composer index:1 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:2 type:kotlin.Int
+              BLOCK_BODY
+                CALL 'public final fun sourceInformation (composer: androidx.compose.runtime.Composer, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                  sourceInformation: CONST String type=kotlin.String value="C87@3212L1062:SettingsScreen.kt.kt#wd1imw"
+                WHEN type=kotlin.Unit origin=IF
+                  BRANCH
+                    if: CALL 'public final fun OROR (arg0: kotlin.Boolean, arg1: kotlin.Boolean): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                      arg0: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                          arg0: CALL 'public final fun and (other: kotlin.Int): kotlin.Int [infix] declared in kotlin.Int' type=kotlin.Int origin=null
+                            $this: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            other: CONST Int type=kotlin.Int value=17
+                          arg1: CONST Int type=kotlin.Int value=16
+                      arg1: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public abstract fun <get-skipping> (): kotlin.Boolean declared in androidx.compose.runtime.Composer' type=kotlin.Boolean origin=null
+                          $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                    then: BLOCK type=kotlin.Unit origin=null
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventStart (key: kotlin.Int, dirty1: kotlin.Int, dirty2: kotlin.Int, info: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                            key: CONST Int type=kotlin.Int value=509707086
+                            dirty1: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            dirty2: CONST Int type=kotlin.Int value=-1
+                            info: CONST String type=kotlin.String value="com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.lambda-2.<anonymous> (SettingsScreen.kt.kt:87)"
+                      CALL 'public final fun Column (modifier: androidx.compose.ui.Modifier?, verticalArrangement: androidx.compose.foundation.layout.Arrangement.Vertical?, horizontalAlignment: androidx.compose.ui.Alignment.Horizontal?, content: @[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit [inline] declared in androidx.compose.foundation.layout.ColumnKt' type=kotlin.Unit origin=null
+                        modifier: CALL 'public final fun padding-3ABfNKs (all: androidx.compose.ui.unit.Dp): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=null
+                          $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                          all: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+                            $receiver: CONST Int type=kotlin.Int value=15
+                        verticalArrangement: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        horizontalAlignment: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        content: BLOCK type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=LAMBDA
+                          COMPOSITE type=kotlin.Unit origin=null
+                          FUNCTION_REFERENCE 'private final fun invoke$lambda$2 ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                        $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                        $changed: CONST Int type=kotlin.Int value=6
+                        $default: CONST Int type=kotlin.Int value=6
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventEnd (): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  BRANCH
+                    if: CONST Boolean type=kotlin.Boolean value=true
+                    then: CALL 'public abstract fun skipToGroupEnd (): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                      $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+            FUN LOCAL_FUNCTION_FOR_LAMBDA name:invoke$lambda$2$lambda$1$lambda$0 visibility:private modality:FINAL <> (it:kotlin.Boolean) returnType:kotlin.Unit?
+              VALUE_PARAMETER name:it index:0 type:kotlin.Boolean
+              BLOCK_BODY
+                SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:checked type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+                  value: CONST Int type=kotlin.Int value=1
+            FUN INLINE_LAMBDA name:invoke$lambda$2$lambda$1 visibility:private modality:FINAL <> () returnType:kotlin.Function1<kotlin.Boolean, kotlin.Unit>
+              BLOCK_BODY
+                VAR name:$i$a$-cache-ComposableSingletons$SettingsScreen_ktKt$lambda-2$1$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                RETURN type=kotlin.Nothing from='private final fun invoke$lambda$2$lambda$1 (): kotlin.Function1<kotlin.Boolean, kotlin.Unit> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  BLOCK type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=LAMBDA
+                    COMPOSITE type=kotlin.Unit origin=null
+                    CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=null
+                      <T>: kotlin.Function1<kotlin.Boolean, kotlin.Unit>
+                      dynamicCall: CALL 'public final fun invoke (): kotlin.Function1<kotlin.Boolean, kotlin.Unit> declared in kotlin.jvm.internal.invokeDynamic' type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=null
+                      bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                        tag: CONST Int type=kotlin.Int value=6
+                        owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+                        name: CONST String type=kotlin.String value="metafactory"
+                        descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+                        isInterface: CONST Boolean type=kotlin.Boolean value=false
+                      bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+                        CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                          method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: P1 of kotlin.Function1): R of kotlin.Function1 [operator] declared in kotlin.Function1' type=kotlin.Any
+                        RAW_FUNCTION_REFERENCE 'private final fun invoke$lambda$2$lambda$1$lambda$0 (it: kotlin.Boolean): kotlin.Unit? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Any
+                        CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                          method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: kotlin.Boolean?): kotlin.Unit? [fake_override,operator] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+            FUN INLINE_LAMBDA name:invoke$lambda$2 visibility:private modality:FINAL <> ($receiver:androidx.compose.foundation.layout.ColumnScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              $receiver: VALUE_PARAMETER name:$this$Column type:androidx.compose.foundation.layout.ColumnScope
+              VALUE_PARAMETER name:$composer index:0 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:1 type:kotlin.Int
+              BLOCK_BODY
+                VAR name:$i$a$-Column-ComposableSingletons$SettingsScreen_ktKt$lambda-2$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                BLOCK type=kotlin.Unit origin=null
+                  CALL 'public final fun sourceInformationMarkerStart (composer: androidx.compose.runtime.Composer, key: kotlin.Int, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                    key: CONST Int type=kotlin.Int value=-229485072
+                    sourceInformation: CONST String type=kotlin.String value="C91@3340L220,99@3672L15,101@3836L11,102@3941L11,103@4041L11,104@4157L11,100@3766L468,97@3581L675:SettingsScreen.kt.kt#wd1imw"
+                  COMPOSITE type=kotlin.Unit origin=null
+                    BLOCK type=kotlin.Unit origin=ARGUMENTS_REORDERING_FOR_CALL
+                      VAR IR_TEMPORARY_VARIABLE name:tmp0_color type:androidx.compose.ui.graphics.Color [val]
+                        CALL 'public final fun <get-Background> (): androidx.compose.ui.graphics.Color declared in com.habitz.ui.theme.ColorKt' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                      VAR IR_TEMPORARY_VARIABLE name:tmp1_fontWeight type:androidx.compose.ui.text.font.FontWeight [val]
+                        CALL 'public final fun <get-Thin> (): androidx.compose.ui.text.font.FontWeight declared in androidx.compose.ui.text.font.FontWeight.Companion' type=androidx.compose.ui.text.font.FontWeight origin=GET_PROPERTY
+                          $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.text.font.FontWeight.Companion visibility:public [final,static] declared in androidx.compose.ui.text.font.FontWeight' type=androidx.compose.ui.text.font.FontWeight.Companion origin=null
+                      VAR IR_TEMPORARY_VARIABLE name:tmp2_fontSize type:androidx.compose.ui.unit.TextUnit [val]
+                        CALL 'public final fun <get-sp> (): androidx.compose.ui.unit.TextUnit declared in androidx.compose.ui.unit.TextUnitKt' type=androidx.compose.ui.unit.TextUnit origin=GET_PROPERTY
+                          $receiver: CONST Int type=kotlin.Int value=18
+                      CALL 'public final fun Text--4IGK_g (text: kotlin.String, modifier: androidx.compose.ui.Modifier?, color: androidx.compose.ui.graphics.Color, fontSize: androidx.compose.ui.unit.TextUnit, fontStyle: androidx.compose.ui.text.font.FontStyle?, fontWeight: androidx.compose.ui.text.font.FontWeight?, fontFamily: androidx.compose.ui.text.font.FontFamily?, letterSpacing: androidx.compose.ui.unit.TextUnit, textDecoration: androidx.compose.ui.text.style.TextDecoration?, textAlign: androidx.compose.ui.text.style.TextAlign?, lineHeight: androidx.compose.ui.unit.TextUnit, overflow: androidx.compose.ui.text.style.TextOverflow, softWrap: kotlin.Boolean, maxLines: kotlin.Int, minLines: kotlin.Int, onTextLayout: kotlin.Function1<androidx.compose.ui.text.TextLayoutResult, kotlin.Unit>?, style: androidx.compose.ui.text.TextStyle?, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $changed1: kotlin.Int, $default: kotlin.Int): kotlin.Unit declared in androidx.compose.material3.TextKt' type=kotlin.Unit origin=null
+                        text: CONST String type=kotlin.String value="Vincular Calendario"
+                        modifier: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        color: GET_VAR 'val tmp0_color: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                        fontSize: GET_VAR 'val tmp2_fontSize: androidx.compose.ui.unit.TextUnit [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.unit.TextUnit origin=null
+                        fontStyle: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        fontWeight: GET_VAR 'val tmp1_fontWeight: androidx.compose.ui.text.font.FontWeight [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.text.font.FontWeight origin=null
+                        fontFamily: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        letterSpacing: COMPOSITE type=androidx.compose.ui.unit.TextUnit origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.TextUnit origin=null
+                            <T>: kotlin.Long
+                            <R>: androidx.compose.ui.unit.TextUnit
+                            v: CONST Long type=kotlin.Long value=0
+                        textDecoration: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        textAlign: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        lineHeight: COMPOSITE type=androidx.compose.ui.unit.TextUnit origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.TextUnit origin=null
+                            <T>: kotlin.Long
+                            <R>: androidx.compose.ui.unit.TextUnit
+                            v: CONST Long type=kotlin.Long value=0
+                        overflow: COMPOSITE type=androidx.compose.ui.text.style.TextOverflow origin=DEFAULT_VALUE
+                          CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.text.style.TextOverflow origin=null
+                            <T>: kotlin.Int
+                            <R>: androidx.compose.ui.text.style.TextOverflow
+                            v: CONST Int type=kotlin.Int value=0
+                        softWrap: COMPOSITE type=kotlin.Boolean origin=DEFAULT_VALUE
+                          CONST Boolean type=kotlin.Boolean value=false
+                        maxLines: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+                          CONST Int type=kotlin.Int value=0
+                        minLines: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+                          CONST Int type=kotlin.Int value=0
+                        onTextLayout: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        style: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                          CONST Null type=kotlin.Nothing? value=null
+                        $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                        $changed: CONST Int type=kotlin.Int value=199686
+                        $changed1: CONST Int type=kotlin.Int value=0
+                        $default: CONST Int type=kotlin.Int value=131026
+                    CALL 'public final fun Switch (checked: kotlin.Boolean, onCheckedChange: kotlin.Function1<kotlin.Boolean, kotlin.Unit>?, modifier: androidx.compose.ui.Modifier?, thumbContent: kotlin.Function2<androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>?, enabled: kotlin.Boolean, colors: androidx.compose.material3.SwitchColors?, interactionSource: androidx.compose.foundation.interaction.MutableInteractionSource?, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit declared in androidx.compose.material3.SwitchKt' type=kotlin.Unit origin=null
+                      checked: CONST Boolean type=kotlin.Boolean value=false
+                      onCheckedChange: BLOCK type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=null
+                        BLOCK type=kotlin.Unit origin=null
+                          CALL 'public abstract fun startReplaceGroup (key: kotlin.Int): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                            $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                            key: CONST Int type=kotlin.Int value=-700129682
+                          CALL 'public final fun sourceInformation (composer: androidx.compose.runtime.Composer, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                            composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                            sourceInformation: CONST String type=kotlin.String value="CC(remember):SettingsScreen.kt.kt#9igjgp"
+                        VAR IR_TEMPORARY_VARIABLE name:tmp0_group type:kotlin.Function1<kotlin.Boolean, kotlin.Unit> [val]
+                          CALL 'public final fun cache <T> (invalid: kotlin.Boolean, block: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposerKt.cache>): T of androidx.compose.runtime.ComposerKt.cache [inline] declared in androidx.compose.runtime.ComposerKt' type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=null
+                            <T>: kotlin.Function1<kotlin.Boolean, kotlin.Unit>
+                            $receiver: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                            invalid: CONST Boolean type=kotlin.Boolean value=false
+                            block: BLOCK type=kotlin.Function0<kotlin.Function1<kotlin.Boolean, kotlin.Unit>> origin=LAMBDA
+                              COMPOSITE type=kotlin.Unit origin=null
+                              FUNCTION_REFERENCE 'private final fun invoke$lambda$2$lambda$1 (): kotlin.Function1<kotlin.Boolean, kotlin.Unit> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Function0<kotlin.Function1<kotlin.Boolean, kotlin.Unit>> origin=INLINE_LAMBDA reflectionTarget=null
+                        CALL 'public abstract fun endReplaceGroup (): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                          $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                        GET_VAR 'val tmp0_group: kotlin.Function1<kotlin.Boolean, kotlin.Unit> [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=kotlin.Function1<kotlin.Boolean, kotlin.Unit> origin=null
+                      modifier: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      thumbContent: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      enabled: COMPOSITE type=kotlin.Boolean origin=DEFAULT_VALUE
+                        CONST Boolean type=kotlin.Boolean value=false
+                      colors: BLOCK type=androidx.compose.material3.SwitchColors origin=ARGUMENTS_REORDERING_FOR_CALL
+                        VAR IR_TEMPORARY_VARIABLE name:tmp3_$this type:androidx.compose.material3.SwitchDefaults [val]
+                          GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.SwitchDefaults visibility:public [final,static] declared in androidx.compose.material3.SwitchDefaults' type=androidx.compose.material3.SwitchDefaults origin=null
+                        VAR IR_TEMPORARY_VARIABLE name:tmp4_checkedThumbColor type:androidx.compose.ui.graphics.Color [val]
+                          CALL 'public final fun getPrimary-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.material3.ColorScheme' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                            $this: CALL 'public final fun <get-colorScheme> ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.material3.ColorScheme declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.ColorScheme origin=GET_PROPERTY
+                              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.MaterialTheme visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.MaterialTheme origin=null
+                              $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                              $changed: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=kotlin.Int origin=null
+                        VAR IR_TEMPORARY_VARIABLE name:tmp5_uncheckedThumbColor type:androidx.compose.ui.graphics.Color [val]
+                          CALL 'public final fun getOnSurface-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.material3.ColorScheme' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                            $this: CALL 'public final fun <get-colorScheme> ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.material3.ColorScheme declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.ColorScheme origin=GET_PROPERTY
+                              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.MaterialTheme visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.MaterialTheme origin=null
+                              $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                              $changed: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=kotlin.Int origin=null
+                        VAR IR_TEMPORARY_VARIABLE name:tmp6_checkedTrackColor type:androidx.compose.ui.graphics.Color [val]
+                          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+                            arg0: CALL 'public final fun getPrimary-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.material3.ColorScheme' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                              $this: CALL 'public final fun <get-colorScheme> ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.material3.ColorScheme declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.ColorScheme origin=GET_PROPERTY
+                                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.MaterialTheme visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.MaterialTheme origin=null
+                                $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                                $changed: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=kotlin.Int origin=null
+                            alpha: CONST Float type=kotlin.Float value=0.5
+                            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            $mask0: CONST Int type=kotlin.Int value=14
+                            $handler: CONST Null type=kotlin.Any? value=null
+                        VAR IR_TEMPORARY_VARIABLE name:tmp7_uncheckedTrackColor type:androidx.compose.ui.graphics.Color [val]
+                          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+                            arg0: CALL 'public final fun getOutline-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.material3.ColorScheme' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                              $this: CALL 'public final fun <get-colorScheme> ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.material3.ColorScheme declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.ColorScheme origin=GET_PROPERTY
+                                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.MaterialTheme visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.MaterialTheme origin=null
+                                $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                                $changed: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=kotlin.Int origin=null
+                            alpha: CONST Float type=kotlin.Float value=0.5
+                            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            $mask0: CONST Int type=kotlin.Int value=14
+                            $handler: CONST Null type=kotlin.Any? value=null
+                        CALL 'public final fun colors-V1nXRL4 (checkedThumbColor: androidx.compose.ui.graphics.Color, checkedTrackColor: androidx.compose.ui.graphics.Color, checkedBorderColor: androidx.compose.ui.graphics.Color, checkedIconColor: androidx.compose.ui.graphics.Color, uncheckedThumbColor: androidx.compose.ui.graphics.Color, uncheckedTrackColor: androidx.compose.ui.graphics.Color, uncheckedBorderColor: androidx.compose.ui.graphics.Color, uncheckedIconColor: androidx.compose.ui.graphics.Color, disabledCheckedThumbColor: androidx.compose.ui.graphics.Color, disabledCheckedTrackColor: androidx.compose.ui.graphics.Color, disabledCheckedBorderColor: androidx.compose.ui.graphics.Color, disabledCheckedIconColor: androidx.compose.ui.graphics.Color, disabledUncheckedThumbColor: androidx.compose.ui.graphics.Color, disabledUncheckedTrackColor: androidx.compose.ui.graphics.Color, disabledUncheckedBorderColor: androidx.compose.ui.graphics.Color, disabledUncheckedIconColor: androidx.compose.ui.graphics.Color, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $changed1: kotlin.Int, $default: kotlin.Int): androidx.compose.material3.SwitchColors declared in androidx.compose.material3.SwitchDefaults' type=androidx.compose.material3.SwitchColors origin=null
+                          $this: GET_VAR 'val tmp3_$this: androidx.compose.material3.SwitchDefaults [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.material3.SwitchDefaults origin=null
+                          checkedThumbColor: GET_VAR 'val tmp4_checkedThumbColor: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                          checkedTrackColor: GET_VAR 'val tmp6_checkedTrackColor: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                          checkedBorderColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          checkedIconColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          uncheckedThumbColor: GET_VAR 'val tmp5_uncheckedThumbColor: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                          uncheckedTrackColor: GET_VAR 'val tmp7_uncheckedTrackColor: androidx.compose.ui.graphics.Color [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.ui.graphics.Color origin=null
+                          uncheckedBorderColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          uncheckedIconColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledCheckedThumbColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledCheckedTrackColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledCheckedBorderColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledCheckedIconColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledUncheckedThumbColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledUncheckedTrackColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledUncheckedBorderColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          disabledUncheckedIconColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                              <T>: kotlin.Long
+                              <R>: androidx.compose.ui.graphics.Color
+                              v: CONST Long type=kotlin.Long value=0
+                          $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                          $changed: CONST Int type=kotlin.Int value=0
+                          $changed1: CALL 'public final fun shl (bitCount: kotlin.Int): kotlin.Int [infix] declared in kotlin.Int' type=kotlin.Int origin=null
+                            $this: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.SwitchDefaults' type=kotlin.Int origin=null
+                            bitCount: CONST Int type=kotlin.Int value=18
+                          $default: CONST Int type=kotlin.Int value=65484
+                      interactionSource: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                        CONST Null type=kotlin.Nothing? value=null
+                      $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+                      $changed: CONST Int type=kotlin.Int value=54
+                      $default: CONST Int type=kotlin.Int value=92
+                  CALL 'public final fun sourceInformationMarkerEnd (composer: androidx.compose.runtime.Composer): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                    composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke$lambda$2' type=androidx.compose.runtime.Composer? origin=null
+            FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static]
+            FUN CLASS_STATIC_INITIALIZER name:<clinit> visibility:public/*package*/ modality:FINAL <> () returnType:kotlin.Unit
+              BLOCK_BODY
+                SET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=INITIALIZE_FIELD
+                  value: CONSTRUCTOR_CALL 'public/*package*/ constructor <init> () [primary] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+            FUN BRIDGE name:invoke visibility:public modality:OPEN <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, p1:kotlin.Any?, p2:kotlin.Any?, p3:kotlin.Any?) returnType:kotlin.Any?
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER BRIDGE name:p1 index:0 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p2 index:1 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p3 index:2 type:kotlin.Any?
+              EXPRESSION_BODY
+                RETURN type=kotlin.Nothing from='public open fun invoke (p1: kotlin.Any?, p2: kotlin.Any?, p3: kotlin.Any?): kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  CALL 'public final fun invoke ($this$Card: androidx.compose.foundation.layout.ColumnScope, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=BRIDGE_DELEGATION
+                    $this: GET_VAR '<this>: com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+                    $this$Card: TYPE_OP type=androidx.compose.foundation.layout.ColumnScope origin=IMPLICIT_CAST typeOperand=androidx.compose.foundation.layout.ColumnScope
+                      GET_VAR 'p1: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $composer: TYPE_OP type=androidx.compose.runtime.Composer origin=IMPLICIT_CAST typeOperand=androidx.compose.runtime.Composer
+                      GET_VAR 'p2: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $changed: TYPE_OP type=kotlin.Int origin=IMPLICIT_CAST typeOperand=kotlin.Int
+                      GET_VAR 'p3: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+          GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+    SET_FIELD 'FIELD name:lambda-3 type:@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.lazy.LazyItemScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> visibility:internal [static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=kotlin.Unit origin=INITIALIZE_FIELD
+      value: CALL 'public final fun composableLambdaInstance (key: kotlin.Int, tracked: kotlin.Boolean, block: kotlin.Any): androidx.compose.runtime.internal.ComposableLambda declared in androidx.compose.runtime.internal.ComposableLambdaKt' type=androidx.compose.runtime.internal.ComposableLambda origin=null
+        key: CONST Int type=kotlin.Int value=-557249536
+        tracked: CONST Boolean type=kotlin.Boolean value=false
+        block: BLOCK type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+          CLASS LAMBDA_IMPL CLASS name:<no name provided> modality:FINAL visibility:public/*package*/ superTypes:[kotlin.Any; kotlin.Function3<androidx.compose.foundation.lazy.LazyItemScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>]
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+            CONSTRUCTOR GENERATED_MEMBER_IN_CALLABLE_REFERENCE visibility:public/*package*/ <> () returnType:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> [primary]
+              BLOCK_BODY
+                DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () [primary] declared in kotlin.Any'
+                BLOCK type=kotlin.Unit origin=null
+            FUN name:invoke visibility:public modality:FINAL <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, $this$item:androidx.compose.foundation.lazy.LazyItemScope, $composer:androidx.compose.runtime.Composer?, $changed:kotlin.Int) returnType:kotlin.Unit
+              annotations:
+                Composable
+                ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+              overridden:
+                public abstract fun invoke (p1: P1 of kotlin.Function3, p2: P2 of kotlin.Function3, p3: P3 of kotlin.Function3): R of kotlin.Function3 [operator] declared in kotlin.Function3
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER name:$this$item index:0 type:androidx.compose.foundation.lazy.LazyItemScope
+              VALUE_PARAMETER name:$composer index:1 type:androidx.compose.runtime.Composer? [assignable]
+              VALUE_PARAMETER name:$changed index:2 type:kotlin.Int
+              BLOCK_BODY
+                CALL 'public final fun sourceInformation (composer: androidx.compose.runtime.Composer, sourceInformation: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                  sourceInformation: CONST String type=kotlin.String value="C83@3035L6,84@3087L40,82@2991L1297:SettingsScreen.kt.kt#wd1imw"
+                WHEN type=kotlin.Unit origin=IF
+                  BRANCH
+                    if: CALL 'public final fun OROR (arg0: kotlin.Boolean, arg1: kotlin.Boolean): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                      arg0: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                          arg0: CALL 'public final fun and (other: kotlin.Int): kotlin.Int [infix] declared in kotlin.Int' type=kotlin.Int origin=null
+                            $this: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            other: CONST Int type=kotlin.Int value=17
+                          arg1: CONST Int type=kotlin.Int value=16
+                      arg1: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                        $this: CALL 'public abstract fun <get-skipping> (): kotlin.Boolean declared in androidx.compose.runtime.Composer' type=kotlin.Boolean origin=null
+                          $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                    then: BLOCK type=kotlin.Unit origin=null
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventStart (key: kotlin.Int, dirty1: kotlin.Int, dirty2: kotlin.Int, info: kotlin.String): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                            key: CONST Int type=kotlin.Int value=-557249536
+                            dirty1: GET_VAR '$changed: kotlin.Int declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Int origin=null
+                            dirty2: CONST Int type=kotlin.Int value=-1
+                            info: CONST String type=kotlin.String value="com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.lambda-3.<anonymous> (SettingsScreen.kt.kt:82)"
+                      BLOCK type=kotlin.Unit origin=ARGUMENTS_REORDERING_FOR_CALL
+                        VAR IR_TEMPORARY_VARIABLE name:tmp0_shape type:androidx.compose.foundation.shape.CornerBasedShape [val]
+                          CALL 'public final fun <get-large> (): androidx.compose.foundation.shape.CornerBasedShape declared in androidx.compose.material3.Shapes' type=androidx.compose.foundation.shape.CornerBasedShape origin=GET_PROPERTY
+                            $this: CALL 'public final fun <get-shapes> ($composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): androidx.compose.material3.Shapes declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.Shapes origin=GET_PROPERTY
+                              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.MaterialTheme visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=androidx.compose.material3.MaterialTheme origin=null
+                              $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                              $changed: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.MaterialTheme' type=kotlin.Int origin=null
+                        VAR IR_TEMPORARY_VARIABLE name:tmp1_colors type:androidx.compose.material3.CardColors [val]
+                          CALL 'public final fun cardColors-ro_MJ88 (containerColor: androidx.compose.ui.graphics.Color, contentColor: androidx.compose.ui.graphics.Color, disabledContainerColor: androidx.compose.ui.graphics.Color, disabledContentColor: androidx.compose.ui.graphics.Color, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): androidx.compose.material3.CardColors declared in androidx.compose.material3.CardDefaults' type=androidx.compose.material3.CardColors origin=null
+                            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.CardDefaults visibility:public [final,static] declared in androidx.compose.material3.CardDefaults' type=androidx.compose.material3.CardDefaults origin=null
+                            containerColor: CALL 'public final fun <get-TextPrimary> (): androidx.compose.ui.graphics.Color declared in com.habitz.ui.theme.ColorKt' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                            contentColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                              CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                                <T>: kotlin.Long
+                                <R>: androidx.compose.ui.graphics.Color
+                                v: CONST Long type=kotlin.Long value=0
+                            disabledContainerColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                              CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                                <T>: kotlin.Long
+                                <R>: androidx.compose.ui.graphics.Color
+                                v: CONST Long type=kotlin.Long value=0
+                            disabledContentColor: COMPOSITE type=androidx.compose.ui.graphics.Color origin=DEFAULT_VALUE
+                              CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.Color origin=null
+                                <T>: kotlin.Long
+                                <R>: androidx.compose.ui.graphics.Color
+                                v: CONST Long type=kotlin.Long value=0
+                            $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                            $changed: CALL 'public final fun shl (bitCount: kotlin.Int): kotlin.Int [infix] declared in kotlin.Int' type=kotlin.Int origin=null
+                              $this: GET_FIELD 'FIELD name:$stable type:kotlin.Int visibility:public [final,static] declared in androidx.compose.material3.CardDefaults' type=kotlin.Int origin=null
+                              bitCount: CONST Int type=kotlin.Int value=12
+                            $default: CONST Int type=kotlin.Int value=14
+                        VAR IR_TEMPORARY_VARIABLE name:tmp2_modifier type:androidx.compose.ui.Modifier [val]
+                          CALL 'public final fun fillMaxWidth$default (fraction: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+                            $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static] declared in androidx.compose.ui.Modifier' type=androidx.compose.ui.Modifier.Companion origin=null
+                            fraction: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                              CONST Float type=kotlin.Float value=0.0
+                            $mask0: CONST Int type=kotlin.Int value=1
+                            $handler: CONST Null type=kotlin.Any? value=null
+                        CALL 'public final fun Card (modifier: androidx.compose.ui.Modifier?, shape: androidx.compose.ui.graphics.Shape?, colors: androidx.compose.material3.CardColors?, elevation: androidx.compose.material3.CardElevation?, border: androidx.compose.foundation.BorderStroke?, content: @[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int, $default: kotlin.Int): kotlin.Unit declared in androidx.compose.material3.CardKt' type=kotlin.Unit origin=null
+                          modifier: GET_VAR 'val tmp2_modifier: androidx.compose.ui.Modifier [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.ui.Modifier origin=null
+                          shape: GET_VAR 'val tmp0_shape: androidx.compose.foundation.shape.CornerBasedShape [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.foundation.shape.CornerBasedShape origin=null
+                          colors: GET_VAR 'val tmp1_colors: androidx.compose.material3.CardColors [val] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.material3.CardColors origin=null
+                          elevation: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                            CONST Null type=kotlin.Nothing? value=null
+                          border: COMPOSITE type=kotlin.Nothing? origin=DEFAULT_VALUE
+                            CONST Null type=kotlin.Nothing? value=null
+                          content: CALL 'internal final fun <get-lambda-2> (): @[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=@[ExtensionFunctionType] kotlin.Function3<androidx.compose.foundation.layout.ColumnScope, androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit> origin=null
+                            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt origin=null
+                          $composer: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+                          $changed: CONST Int type=kotlin.Int value=196614
+                          $default: CONST Int type=kotlin.Int value=24
+                      WHEN type=kotlin.Unit origin=IF
+                        BRANCH
+                          if: CALL 'public final fun isTraceInProgress (): kotlin.Boolean declared in androidx.compose.runtime.ComposerKt' type=kotlin.Boolean origin=null
+                          then: CALL 'public final fun traceEventEnd (): kotlin.Unit declared in androidx.compose.runtime.ComposerKt' type=kotlin.Unit origin=null
+                  BRANCH
+                    if: CONST Boolean type=kotlin.Boolean value=true
+                    then: CALL 'public abstract fun skipToGroupEnd (): kotlin.Unit declared in androidx.compose.runtime.Composer' type=kotlin.Unit origin=null
+                      $this: GET_VAR '$composer: androidx.compose.runtime.Composer? [assignable] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=androidx.compose.runtime.Composer? origin=null
+            FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static]
+            FUN CLASS_STATIC_INITIALIZER name:<clinit> visibility:public/*package*/ modality:FINAL <> () returnType:kotlin.Unit
+              BLOCK_BODY
+                SET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=INITIALIZE_FIELD
+                  value: CONSTRUCTOR_CALL 'public/*package*/ constructor <init> () [primary] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+            FUN BRIDGE name:invoke visibility:public modality:OPEN <> ($this:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>, p1:kotlin.Any?, p2:kotlin.Any?, p3:kotlin.Any?) returnType:kotlin.Any?
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>
+              VALUE_PARAMETER BRIDGE name:p1 index:0 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p2 index:1 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p3 index:2 type:kotlin.Any?
+              EXPRESSION_BODY
+                RETURN type=kotlin.Nothing from='public open fun invoke (p1: kotlin.Any?, p2: kotlin.Any?, p3: kotlin.Any?): kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>'
+                  CALL 'public final fun invoke ($this$item: androidx.compose.foundation.lazy.LazyItemScope, $composer: androidx.compose.runtime.Composer?, $changed: kotlin.Int): kotlin.Unit declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=kotlin.Unit origin=BRIDGE_DELEGATION
+                    $this: GET_VAR '<this>: com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+                    $this$item: TYPE_OP type=androidx.compose.foundation.lazy.LazyItemScope origin=IMPLICIT_CAST typeOperand=androidx.compose.foundation.lazy.LazyItemScope
+                      GET_VAR 'p1: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $composer: TYPE_OP type=androidx.compose.runtime.Composer origin=IMPLICIT_CAST typeOperand=androidx.compose.runtime.Composer
+                      GET_VAR 'p2: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    $changed: TYPE_OP type=kotlin.Int origin=IMPLICIT_CAST typeOperand=kotlin.Int
+                      GET_VAR 'p3: kotlin.Any? declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>.invoke' type=kotlin.Any? origin=null
+          GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> visibility:public [final,static] declared in com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided>' type=com.habitz.ui.screens.ComposableSingletons$SettingsScreen_ktKt.<clinit>.<no name provided> origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:172)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:39)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseFactoriesKt.createFilePhase$lambda$4(PhaseFactories.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:69)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN LOCAL_FUNCTION_FOR_LAMBDA name:invoke$lambda$2$lambda$1$lambda$0 visibility:private modality:FINAL <> (it:kotlin.Boolean) returnType:kotlin.Unit?
+  VALUE_PARAMETER name:it index:0 type:kotlin.Boolean
+  BLOCK_BODY
+    SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:checked type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+      value: CONST Int type=kotlin.Int value=1
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:168)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitClass(ExpressionCodegen.kt:1000)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitClass(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.declarations.IrClass.accept(IrClass.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.gen(ExpressionCodegen.kt:217)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrCallGenerator.genValueAndPut(IrCallGenerator.kt:48)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:878)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:908)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 54 more
+Caused by: java.lang.AssertionError: access of const val: SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:checked type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+  value: CONST Int type=kotlin.Int value=1
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:861)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:908)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 87 more
+
+
