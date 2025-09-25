@@ -15,6 +15,8 @@ import com.habitz.ui.navigation.BottomNavigationBar
 import com.habitz.ui.navigation.BottomNavScreen
 import com.habitz.ui.screens.AgendaRulesScreen
 import com.habitz.ui.screens.HomeScreen
+import com.habitz.ui.screens.PermissionsScreen
+import com.habitz.ui.screens.PhoneConfigScreen
 import com.habitz.ui.screens.SettingsScreen
 import com.habitz.ui.theme.GrayLight
 import com.habitz.ui.theme.HabitzTheme
@@ -54,6 +56,10 @@ fun HabitzApp() {
             composable(BottomNavScreen.Profile.route) { Text("Pantalla Perfil") }
             composable(BottomNavScreen.Following.route) { Text("Pantalla Seguimiento") }
             composable(BottomNavScreen.Suggest.route) { Text("Pantalla Sugerencias") }
+
+            composable("permissions") { PermissionsScreen(navController) }
+            composable("phoneConfig") { PhoneConfigScreen(navController) }
+
         }
     }
 }
