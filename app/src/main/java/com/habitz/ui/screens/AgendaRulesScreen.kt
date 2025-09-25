@@ -235,6 +235,15 @@ fun AgendaRulesScreen(navController: NavHostController) {
                         onClick = { /* acción vincular calendario */ }
 
                     ){
+                        // Variables de estado individuales para cada día
+                        var lunChecked by remember { mutableStateOf(false) }
+                        var marChecked by remember { mutableStateOf(false) }
+                        var mieChecked by remember { mutableStateOf(false) }
+                        var jueChecked by remember { mutableStateOf(false) }
+                        var vieChecked by remember { mutableStateOf(false) }
+                        var sabChecked by remember { mutableStateOf(false) }
+                        var domChecked by remember { mutableStateOf(false) }
+                        
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -242,10 +251,9 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            var isChecked = false
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = lunChecked,
+                                onCheckedChange = { lunChecked = it },
                                 label = "LUN",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -254,8 +262,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = marChecked,
+                                onCheckedChange = { marChecked = it },
                                 label = "MAR",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -264,8 +272,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = mieChecked,
+                                onCheckedChange = { mieChecked = it },
                                 label = "MIE",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -274,8 +282,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = jueChecked,
+                                onCheckedChange = { jueChecked = it },
                                 label = "JUE",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -284,8 +292,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = vieChecked,
+                                onCheckedChange = { vieChecked = it },
                                 label = "VIE",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -294,8 +302,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = sabChecked,
+                                onCheckedChange = { sabChecked = it },
                                 label = "SAB",
                                 size = 32.dp,
                                 checkedColor = Primary,
@@ -304,8 +312,8 @@ fun AgendaRulesScreen(navController: NavHostController) {
                             )
 
                             ReusableCheckbox(
-                                checked = !isChecked,
-                                onCheckedChange = { isChecked = !it},
+                                checked = domChecked,
+                                onCheckedChange = { domChecked = it },
                                 label = "DOM",
                                 size = 32.dp,
                                 checkedColor = Primary,

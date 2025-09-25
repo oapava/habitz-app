@@ -219,7 +219,7 @@ private fun OtpDialog(
 
                     //cuadros para el código
                     Row(
-                        horizontalArrangement = Arrangement.spacedBy(14.dp, Alignment.CenterHorizontally),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally),
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth()
                     ) {
@@ -270,12 +270,12 @@ private fun OtpBox(value: String, onChange: (String) -> Unit) {
         ),
         textStyle = androidx.compose.ui.text.TextStyle(
             textAlign = TextAlign.Center,
-            fontSize = 18.sp,
+            fontSize = 16.sp,
             fontWeight = FontWeight.Bold
         ),
         modifier = Modifier
             .width(45.dp)
-            .height(45.dp)
+            .height(50.dp)
             .clip(RoundedCornerShape(8.dp))
     )
 }
