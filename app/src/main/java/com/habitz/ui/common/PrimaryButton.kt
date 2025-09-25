@@ -27,7 +27,8 @@ fun PrimaryButton(
     text: String,
     onClick: () -> Unit,
     sizeIcon: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onIconClick: (() -> Unit)? = null
 ) {
     Card(
         onClick = onClick,
@@ -55,7 +56,7 @@ fun PrimaryButton(
             )
             PrimaryIcon(
                 ico = painterResource(id = com.example.habitz.R.drawable.plus),
-                onClick = { /* Acción aquí */ },
+                onClick = { onIconClick?.invoke() },
                 modifier = Modifier
                     .background(
                         shape = CircleShape,

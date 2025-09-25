@@ -14,6 +14,7 @@ import androidx.navigation.compose.*
 import com.habitz.ui.navigation.BottomNavigationBar
 import com.habitz.ui.navigation.BottomNavScreen
 import com.habitz.ui.screens.AgendaRulesScreen
+import com.habitz.ui.screens.CreateHabitScreen
 import com.habitz.ui.screens.HomeScreen
 import com.habitz.ui.screens.PermissionsScreen
 import com.habitz.ui.screens.PhoneConfigScreen
@@ -47,7 +48,7 @@ fun HabitzApp() {
             modifier = Modifier
                 .padding(innerPadding)
         ) {
-            composable(BottomNavScreen.Home.route) { HomeScreen() }
+            composable(BottomNavScreen.Home.route) { HomeScreen(navController) }
             composable(BottomNavScreen.Settings.route) { SettingsScreen(navController) }
             // 👇 pantalla interna de Settings
             composable("agendaRules") { AgendaRulesScreen(navController) }
@@ -59,6 +60,8 @@ fun HabitzApp() {
 
             composable("permissions") { PermissionsScreen(navController) }
             composable("phoneConfig") { PhoneConfigScreen(navController) }
+
+            composable("createHabit") { CreateHabitScreen(navController) }
 
         }
     }

@@ -2,6 +2,7 @@ package com.habitz.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
@@ -14,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.habitz.R
 import com.habitz.ui.shared.PrimaryButton
 import com.habitz.ui.shared.PrimaryIcon
@@ -24,9 +26,8 @@ import com.habitz.ui.theme.Muted
 import com.habitz.ui.theme.Primary
 import com.habitz.ui.theme.TextPrimary
 
-@Preview(showBackground = true)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
     val habits = listOf("LEER", "CORRER", "COMER SANO")
 
     LazyColumn(
@@ -51,8 +52,9 @@ fun HomeScreen() {
                 )
                 PrimaryButton(
                     text = "CREAR NUEVO HÁBITO",
-                    onClick = {},
-                    sizeIcon = 40
+                    onClick = { /* Sin funcionalidad en el botón principal */ },
+                    sizeIcon = 40,
+                    onIconClick = { navController.navigate("createHabit") }
                 )
             }
         }
@@ -108,12 +110,14 @@ fun HeaderRow(title: String) {
                 color = Background
             )
         )
-        PrimaryIcon(
-            ico = painterResource(id = R.drawable.next),
-            onClick = {},
+        Icon(
+            painter = painterResource(id = R.drawable.next),
+            contentDescription = null,
+            tint = MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier
                 .background(Primary, shape = CircleShape)
                 .size(40.dp)
+                .padding(8.dp)
         )
     }
 }
